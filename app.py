@@ -124,8 +124,9 @@ def get_ffmpeg_path():
     if shutil.which('ffmpeg'):
         return 'ffmpeg'
     
-    # Check common Windows locations
+    # Check common locations (Linux production + Windows)
     common_paths = [
+        '/usr/bin/ffmpeg',  # Linux production
         r'C:\ffmpeg\bin\ffmpeg.exe',
         r'C:\Program Files\ffmpeg\bin\ffmpeg.exe',
         os.path.join(os.path.dirname(__file__), 'ffmpeg', 'ffmpeg.exe'),
